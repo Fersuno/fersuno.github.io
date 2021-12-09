@@ -100,14 +100,109 @@ p {
   background-color: var(--second-color);
 }
 
+.menu-btn svg {
+  fill: var(--first-color);
+}
+
 .menu {
-  display: none;
+  position: fixed;
+  left: 0;
+  bottom: var(--header-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  background-color: var(--second-color);
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--first-color);
+}
+
+.menu a:hover {
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu a {
+    padding: 0 1rem;
+  }
+
+  .menu a:last-child {
+    padding-right: 0;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+  }
+}
+
+/* Hero Image */
+
+.hero-image {
+  background-image: var(--image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: var(--attachment);
+}
+
+.hero-image-opacity {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--opacity-color);
+}
+
+.hero-image-title {
+  font-size: 8vh;
+  color: var(--hero-text-color);
 }
 
 /* Utilities */
 
 .box-shadow-1 {
   box-shadow: 0.30rem 0.30rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  border-radius: .7rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
 }
 
 .container {
@@ -144,4 +239,27 @@ p {
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
+  align-content: center;
+}
+
+.logo img {
+  display: none;
+}
+
+@media screen and (min-width: 768px){
+  
+}
+
+@media screen and (min-width: 1024px){
+  .header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    height: calc(var(--header-height) - 0.5rem);
+  }
+
+  .logo img {
+    height: calc(var(--header-height) - 1.5rem);
+    align-items: center;
+  }
 }
