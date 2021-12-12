@@ -7,8 +7,8 @@
                 <animateTransform
                     attributeName="transform"
                     type="rotate"
-                    from="0 18 18"
-                    to="360 18 18"
+                    from="26 163 255"
+                    to="54 157 226"
                     dur="1s"
                     repeatCount="indefinite"/>
             </path>
