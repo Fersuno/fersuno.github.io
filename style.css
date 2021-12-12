@@ -101,6 +101,8 @@ p {
 
 .menu-btn svg {
   fill: var(--first-color);
+  height: 2rem;
+  width: 2rem;
 }
 
 .menu {
@@ -160,6 +162,46 @@ p {
     background-color: transparent;
   }
 }
+
+/* Modal window - Only CSS*/
+
+.modal {
+position: fixed;
+z-index: 999;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: var(--black-alpha-color);
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+pointer-events: none;
+transition: all 1seg;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.modal-close svg {
+  width: 3rem;
+  height: 3rem;
+  fill: var(--first-color);
+}
+
+.modal[id|="trabajo"]:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 /* Progress Bar */
 
@@ -350,7 +392,7 @@ progress::-moz-progress-bar {
   position: relative;
   width: 100%;
   margin: 1rem 0;
-  display: block;
+  display:flex;
 }
 
 .portfolio-card img {
@@ -387,6 +429,35 @@ progress::-moz-progress-bar {
   height: 100%;
 }
 
+.portfolio-modal {
+  padding: 1rem;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: .7rem;
+  background-color: var(--white-color);
+}
+
+.portfolio-modal img {
+  border-radius: .7rem
+}
+
+.portfolio-modal h3 {
+  margin: 1rem auto;
+  padding: .5rem 0;
+  border-bottom: medium solid var(--first-color);
+}
+
+.portfolio-details {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-auto-rows: 1.5rem;
+}
+
+.portfolio-details b {
+  color: var(--first-color);
+}
+
 .service-card {
   margin: 1rem 1rem;
   padding: 1rem;
@@ -416,6 +487,17 @@ progress::-moz-progress-bar {
   .portfolio-card img {
     border-radius: 0.7rem;
   }
+
+  .portfolio-modal {
+    max-width: 800px;
+    flex-direction: row;
+  }
+
+  .portfolio-info {
+    margin-left: 1rem;
+    align-self: center;
+  }
+
   .services > .container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
