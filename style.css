@@ -511,6 +511,7 @@ progress::-moz-progress-bar {
 }
 
 @media screen and (min-width: 1024px){
+  
   .header {
     position: sticky;
     top: 0;
